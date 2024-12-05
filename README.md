@@ -236,7 +236,7 @@ public class VatVerificationController : ControllerBase
 Dependencies
 This project uses the following NuGet packages:
 
-Microsoft.EntityFrameworkCore
-FluentValidation
-Moq
+Microsoft.EntityFrameworkCore,
+FluentValidation,
+Moq,
 XUnit
