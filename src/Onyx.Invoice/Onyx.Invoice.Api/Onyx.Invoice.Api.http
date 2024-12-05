@@ -1,0 +1,6 @@
+@Onyx.Invoice.Api_HostAddress = https://localhost:7019
+
+GET {{Onyx.Invoice.Api_HostAddress}}/invoice/1
+Accept: application/json
+
+###
