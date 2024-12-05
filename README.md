@@ -1,6 +1,6 @@
 # Assignment - Tønsberg
 
-This repository contains the solution to the development assignment for Tønsberg. The solution is structured into four main tasks, each addressing different aspects of software development, including LINQ queries, unit testing, API development, and VAT verification.
+This repository contains the solution to the development assignment for Tønsberg. including LINQ queries, unit testing, API development, and VAT verification.
 
 ## Project Structure
 
@@ -34,10 +34,10 @@ public async Task<IEnumerable<string>> GetRepeatedGuestNamesAsync()
 
     return repeatedGuestNames;
 }
+```
 b) Total Number of Nights per Travel Agent for 2015
 A LINQ expression was written to find the total number of nights for each travel agent for invoice groups issued in 2015:
 
-### **Code**
 ```csharp
 public async Task<IEnumerable<TravelAgentInfo>> GetTotalNightsByTravelAgentAsync(int year)
 {
