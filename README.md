@@ -240,3 +240,8 @@ Microsoft.EntityFrameworkCore,
 FluentValidation,
 Moq,
 XUnit
+## Frontend Development  
+b) Create simple front-end using Angular, React or any other frontend framework of your choosing, with a simple user interface that integrates with the API created in sub-task a) and allows validating VAT IDs and show their validation status.
+
+The Front End development in this repository: https://github.com/AliHussein1991/Onyx.VatVerifier.Web
+
