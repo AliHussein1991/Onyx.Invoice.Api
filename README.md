@@ -37,8 +37,8 @@ public async Task<IEnumerable<string>> GetRepeatedGuestNamesAsync()
 b) Total Number of Nights per Travel Agent for 2015
 A LINQ expression was written to find the total number of nights for each travel agent for invoice groups issued in 2015:
 
-csharp
-Copy code
+### **Code**
+```csharp
 public async Task<IEnumerable<TravelAgentInfo>> GetTotalNightsByTravelAgentAsync(int year)
 {
     IEnumerable<TravelAgentInfo> numberOfNightsByTravelAgent  = await _dbContext.InvoiceGroup
@@ -54,30 +54,32 @@ public async Task<IEnumerable<TravelAgentInfo>> GetTotalNightsByTravelAgentAsync
         .ToListAsync();
     return numberOfNightsByTravelAgent;
 }
+```
 c) SQL Query for Travel Agents with No Observations
 The SQL query to find travel agents that do not have any observations is as follows:
 
 sql
-Copy code
+```csharp
 SELECT DISTINCT t.TravelAgent
 FROM TravelAgent t
 LEFT JOIN Observation o ON t.TravelAgent = o.TravelAgent
 WHERE o.TravelAgent IS NULL;
+```
 d) SQL Query for Travel Agents with More Than Two Observations
 The SQL query to find travel agents that have more than two observations is as follows:
 
 sql
-Copy code
+```csharp
 SELECT o.TravelAgent, COUNT(o.Id) AS ObservationCount
 FROM Observation o
 GROUP BY o.TravelAgent
 HAVING COUNT(o.Id) > 2;
+```
 Task 2: Logger Refactoring and Unit Testing
 a) Refactor Logger Class for Unit Testing
 The Logger class was refactored to enable unit testing by abstracting the time provider and using dependency injection:
 
-csharp
-Copy code
+```csharp
 public class Logger
 {
     private readonly StreamWriter _writer;
@@ -97,11 +99,12 @@ public class Logger
         _writer.WriteLine($"[{timestamp:dd.MM.yy HH:mm:ss}] {str}");
     }
 }
+```
+
 b) Unit Test for Logger
 The unit test checks if the Log method correctly prefixes the log message with a timestamp:
 
-csharp
-Copy code
+```csharp
 public class LoggerTests
 {
     private readonly DateTime _fixedDateTime;
@@ -134,12 +137,13 @@ public class LoggerTests
         }
     }
 }
+```
+
 Task 3: VAT Verification Service
 a) Implementing the Verify Method for VAT Verification
 The VatVerifier class was implemented to verify VAT IDs using the EU VIES web service:
 
-csharp
-Copy code
+```csharp
 public class VatVerifier : IVatVerifier
 {
     private readonly IValidator<VatVerificationRequest> _validator;
@@ -188,12 +192,13 @@ public class VatVerifier : IVatVerifier
         }
     }
 }
+```
+
 Task 4: VAT Verification API Controller
 a) API Controller for VAT Verification
 The VatVerificationController handles POST requests to verify VAT IDs:
 
-csharp
-Copy code
+```csharp
 [Route("api/[controller]")]
 [ApiController]
 public class VatVerificationController : ControllerBase
@@ -226,6 +231,8 @@ public class VatVerificationController : ControllerBase
         }
     }
 }
+```
+
 Dependencies
 This project uses the following NuGet packages:
 
